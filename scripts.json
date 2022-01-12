@@ -1,0 +1,27 @@
+{
+  "$schema": "https://deno.land/x/denon@2.4.9/schema.json",
+  "scripts": {
+    "lint:fix": {
+      "cmd": "deno fmt --config deno.json",
+      "desc": "fix linting error",
+      "log": "info",
+      "watch": false
+    },
+    "dev": {
+      "cmd": "deno run --config deno.json src/index.ts",
+      "desc": "watch dev idnex",
+      "allow": ["net", "read", "env"],
+      "importMap": "depts.json",
+      "log": "info",
+      "unstable": false,
+      "watch": true
+    }
+  },
+  "watcher": {
+    "interval": 0,
+    "exts": ["js", "jsx", "ts", "tsx", "json"],
+    "match": ["**/*.*"],
+    "skip": ["*/.git/*"],
+    "legacy": false
+  }
+}
